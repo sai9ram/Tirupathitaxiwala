@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tirupati Taxi Wala Assistant</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f0f2f5;
+    }
+
+    /* Chat Label (Half Moon Shape) */
+    .chat-label {
+      position: fixed;
+      bottom: 95px;
+      right: 25px;
+      background: linear-gradient(135deg, #001f3f, #004080);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 20px 20px 0 20px; /* half-moon shape */
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Floating Button */
+    .chatbot-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(135deg, #001f3f, #004080); /* Navy gradient */
+      color: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-size: 28px;
+      transition: transform 0.2s;
+    }
+
+    .chatbot-button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Chat Window */
+    .chatbot-window {
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+      background: linear-gradient(135deg, #ffffff, #f8f9fb); /* white gradient */
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .chatbot-header {
+      background: linear-gradient(135deg, #001f3f, #004080); /* Navy gradient */
+      color: #fff;
+      padding: 15px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* Messages Area */
+    .chatbot-messages {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    .message {
+      margin-bottom: 12px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      max-width: 80%;
+      line-height: 1.4;
+    }
+
+    .bot-message {
+      background: #f1f1f1;
+      align-self: flex-start;
+    }
+
+    .user-message {
+      background: #004080;
+      color: #fff;
+      align-self: flex-end;
+    }
+
+    /* Options */
+    .options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .option-button {
+      background: linear-gradient(135deg, #ffcc00, #ffb700); /* Yellow gradient */
+      border: none;
+      padding: 8px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 13px;
+      transition: background 0.3s;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .option-button:hover {
+      background: linear-gradient(135deg, #ffb700, #e6a500);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Chat Label -->
+  <div class="chat-label">💬 Let’s Chat</div>
+
+  <!-- Chat Button -->
+  <div class="chatbot-button" onclick="toggleChat()">💬</div>
+
+  <!-- Chat Window -->
+  <div class="chatbot-window" id="chatbot">
+    <div class="chatbot-header">Tirupati Taxi Wala Assistant</div>
+    <div class="chatbot-messages" id="chatbot-messages"></div>
+  </div>
+
+  <script>
+    const chatbot = document.getElementById('chatbot');
+    const messagesContainer = document.getElementById('chatbot-messages');
+    const chatLabel = document.querySelector('.chat-label');
+
+    function toggleChat() {
+      chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+      chatLabel.style.display = 'none'; // hide label after opening
+      if (chatbot.style.display === 'flex' && messagesContainer.innerHTML === '') {
+        showBotMessage("🙏 Hi, welcome to Tirupati Taxi Wala! May I know your requirement?");
+        showOptions(["🚕 Taxi for Local Temple Visits", "🛕 Tirumala & Tirupati Packages", "💰 Check Fare", "📋 View Details", "📞 Talk to Support"]);
+      }
+    }
+
+    function showBotMessage(message) {
+      const msg = document.createElement('div');
+      msg.className = 'message bot-message';
+      msg.innerText = message;
+      messagesContainer.appendChild(msg);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function showUserMessage(message) {
+      const msg = document.createElement('div');
+      msg.className = 'message user-message';
+      msg.innerText = message;
+      messagesContainer.appendChild(msg);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function showOptions(options) {
+      const optionsDiv = document.createElement('div');
+      optionsDiv.className = 'options';
+      options.forEach(option => {
+        const btn = document.createElement('button');
+        btn.className = 'option-button';
+        btn.innerText = option;
+        btn.onclick = () => handleOption(option);
+        optionsDiv.appendChild(btn);
+      });
+      messagesContainer.appendChild(optionsDiv);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+
+    function handleOption(option) {
+      showUserMessage(option);
+
+      if (option.includes("Check Fare")) {
+        showBotMessage("🚖 Fare Chart:\n- Airport Pickup (Chennai to Tirupati): ₹4,500\n- Airport Pickup (Bangalore to Tirupati): ₹5,500\n- Tirupati Local (8hrs/80km): ₹2,200\n- Outstation (per km): ₹12/km");
+      } 
+      else if (option.includes("View Details")) {
+        showBotMessage("📋 Package Details:\n1. Tirupati Darshan Package – Includes pickup, darshan tickets, and drop.\n2. Tirumala & Tirupati Temples – Local sightseeing with guide.\n3. Outstation Trips – Bangalore, Chennai, Kalahasti, etc.");
+      }
+      else if (option.includes("Taxi for Local Temple")) {
+        showBotMessage("🛕 Local Temple Visits:\n- Govindaraja Swamy Temple\n- Kapila Theertham\n- ISKCON Tirupati\n- Sri Padmavathi Ammavari Temple");
+      }
+      else if (option.includes("Tirumala & Tirupati Packages")) {
+        showBotMessage("✨ Popular Packages:\n- One Day Tirupati Darshan\n- Two Day Tirumala Temple Tour\n- Special VIP Darshan Package");
+      }
+      else if (option.includes("Talk to Support") || option.includes("Book Now")) {
+        window.open("https://wa.me/919000000000?text=Hello%20I%20want%20to%20book%20a%20taxi", "_blank");
+      }
+
+      showOptions(["📋 View Details", "💰 Check Fare", "🚖 Book Now", "🔙 Back to Main Menu"]);
+    }
+  </script>
+</body>
+<!-- Chatbot Elements Start -->
+<div class="chat-label">💬 Let’s Chat</div>
+<div class="chatbot-button" onclick="toggleChat()">💬</div>
+<div class="chatbot-window" id="chatbot">
+  <div class="chatbot-header">Tirupati Taxi Wala Assistant</div>
+  <div class="chatbot-messages" id="chatbot-messages"></div>
+</div>
+<style>
+  .chat-label {position: fixed;bottom: 175px;left: 25px;background: linear-gradient(135deg, #001f3f, #004080);color: #fff;padding: 6px 14px;border-radius: 20px 20px 20px 0;font-size: 14px;font-weight: 500;box-shadow: 0 3px 8px rgba(0,0,0,0.2);animation: float 2s infinite ease-in-out;z-index: 9999;}@keyframes float {0% { transform: translateY(0); }50% { transform: translateY(-4px); }100% { transform: translateY(0); }}.chatbot-button {position: fixed;bottom: 100px;left: 20px;background: linear-gradient(135deg, #001f3f, #004080);color: #fff;border-radius: 50%;width: 60px;height: 60px;display: flex;align-items: center;justify-content: center;cursor: pointer;box-shadow: 0 4px 10px rgba(0,0,0,0.2);font-size: 28px;transition: transform 0.2s;z-index: 9999;}.chatbot-button:hover {transform: scale(1.1);}.chatbot-window {position: fixed;bottom: 170px;left: 20px;width: 350px;height: 500px;background: linear-gradient(135deg, #ffffff, #f8f9fb);border-radius: 15px;box-shadow: 0 6px 20px rgba(0,0,0,0.3);display: none;flex-direction: column;overflow: hidden;z-index: 9999;}.chatbot-header {background: linear-gradient(135deg, #001f3f, #004080);color: #fff;padding: 15px;font-weight: bold;text-align: center;}.chatbot-messages {flex: 1;padding: 15px;overflow-y: auto;font-size: 14px;}.message {margin-bottom: 12px;padding: 10px 14px;border-radius: 10px;max-width: 80%;line-height: 1.4;}.bot-message {background: #f1f1f1;align-self: flex-start;}.user-message {background: #004080;color: #fff;align-self: flex-end;}.options {display: flex;flex-wrap: wrap;gap: 8px;margin-top: 8px;}.option-button {background: linear-gradient(135deg, #ffcc00, #ffb700);border: none;padding: 8px 12px;border-radius: 20px;cursor: pointer;font-size: 13px;transition: background 0.3s;color: #000;font-weight: 500;}.option-button:hover {background: linear-gradient(135deg, #ffb700, #e6a500);}
+</style>
+<script>
+  const chatbot = document.getElementById('chatbot');
+  const messagesContainer = document.getElementById('chatbot-messages');
+  const chatLabel = document.querySelector('.chat-label');
+  function toggleChat() {
+    chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+    chatLabel.style.display = 'none';
+    if (chatbot.style.display === 'flex' && messagesContainer.innerHTML === '') {
+      showBotMessage("🙏 Hi, welcome to Tirupati Taxi Wala! May I know your requirement?");
+      showOptions(["🚕 Taxi for Local Temple Visits", "🛕 Tirumala & Tirupati Packages", "💰 Check Fare", "📋 View Details", "📞 Talk to Support"]);
+    }
+  }
+  function showBotMessage(message) {
+    const msg = document.createElement('div');
+    msg.className = 'message bot-message';
+    msg.innerText = message;
+    messagesContainer.appendChild(msg);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+  function showUserMessage(message) {
+    const msg = document.createElement('div');
+    msg.className = 'message user-message';
+    msg.innerText = message;
+    messagesContainer.appendChild(msg);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+  function showOptions(options) {
+    const optionsDiv = document.createElement('div');
+    optionsDiv.className = 'options';
+    options.forEach(option => {
+      const btn = document.createElement('button');
+      btn.className = 'option-button';
+      btn.innerText = option;
+      btn.onclick = () => handleOption(option);
+      optionsDiv.appendChild(btn);
+    });
+    messagesContainer.appendChild(optionsDiv);
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  }
+  function handleOption(option) {
+    showUserMessage(option);
+    if (option.includes("Check Fare")) {
+      showBotMessage("🚖 Fare Chart:\n- Airport Pickup (Chennai to Tirupati): ₹4,500\n- Airport Pickup (Bangalore to Tirupati): ₹5,500\n- Tirupati Local (8hrs/80km): ₹2,200\n- Outstation (per km): ₹12/km");
+    } 
+    else if (option.includes("View Details")) {
+      showBotMessage("📋 Package Details:\n1. Tirupati Darshan Package – Includes pickup, darshan tickets, and drop.\n2. Tirumala & Tirupati Temples – Local sightseeing with guide.\n3. Outstation Trips – Bangalore, Chennai, Kalahasti, etc.");
+    }
+    else if (option.includes("Taxi for Local Temple")) {
+      showBotMessage("🛕 Local Temple Visits:\n- Govindaraja Swamy Temple\n- Kapila Theertham\n- ISKCON Tirupati\n- Sri Padmavathi Ammavari Temple");
+    }
+    else if (option.includes("Tirumala & Tirupati Packages")) {
+      showBotMessage("✨ Popular Packages:\n- One Day Tirupati Darshan\n- Two Day Tirumala Temple Tour\n- Special VIP Darshan Package");
+    }
+    else if (option.includes("Talk to Support") || option.includes("Book Now")) {
+      window.open("https://wa.me/919000000000?text=Hello%20I%20want%20to%20book%20a%20taxi", "_blank");
+    }
+    showOptions(["📋 View Details", "💰 Check Fare", "🚖 Book Now", "🔙 Back to Main Menu"]);
+  }
+</script>
+</html>

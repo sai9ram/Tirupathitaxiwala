@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Vehicles | TirupatiTaxiWala</title>
+  <meta name="description" content="Explore our fleet of well-maintained AC vehicles for all group sizes. Book your ride with TirupatiTaxiWala.">
+  <link rel="icon" type="image/png" href="TIRUPATI_TAXIWALA_High_Quality.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E4D8C',
+            secondary: '#E8B42B'
+          },
+          borderRadius: {
+            'none': '0px',
+            'sm': '4px',
+            DEFAULT: '8px',
+            'md': '12px',
+            'lg': '16px',
+            'xl': '20px',
+            '2xl': '24px',
+            '3xl': '32px',
+            'full': '9999px',
+            'button': '8px'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+:where([class^="ri-"])::before {
+content: "\f3c2";
+}
+@keyframes shake {
+0%, 100% { transform: translateX(0); }
+25% { transform: translateX(-5px); }
+75% { transform: translateX(5px); }
+}
+.shake {
+animation: shake 0.3s ease-in-out;
+}
+.hero-bg {
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
+.counter-animation {
+animation: countUp 2s ease-out;
+}
+@keyframes countUp {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+.floating-whatsapp {
+position: fixed;
+bottom: 7rem;
+right: 2rem;
+z-index: 1000;
+animation: pulse 2s infinite;
+}
+.floating-phone {
+position: fixed;
+bottom: 2rem;
+right: 2rem;
+z-index: 1000;
+animation: pulse 2s infinite;
+}
+@media (max-width: 768px) {
+.floating-whatsapp {
+bottom: 6rem;
+right: 1rem;
+}
+.floating-phone {
+bottom: 1rem;
+right: 1rem;
+}
+}
+@keyframes pulse {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.05); }
+}
+.testimonial-slider {
+scroll-behavior: smooth;
+}
+/* Fleet Carousel Styles */
+.scrollbar-hide {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+display: none;
+}
+.fleet-carousel-nav {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+width: 40px;
+height: 40px;
+background: rgba(30, 77, 140, 0.9);
+color: white;
+border: none;
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: all 0.3s ease;
+z-index: 10;
+}
+.fleet-carousel-nav:hover {
+background: rgba(30, 77, 140, 1);
+transform: translateY(-50%) scale(1.1);
+}
+.fleet-carousel-nav.prev {
+left: -20px;
+}
+.fleet-carousel-nav.next {
+right: -20px;
+}
+@media (max-width: 768px) {
+.fleet-carousel-nav {
+display: none;
+}
+/* Mobile Navigation Improvements */
+.mobile-menu-open {
+display: flex !important;
+flex-direction: column;
+position: absolute;
+top: 100%;
+left: 0;
+right: 0;
+background: white;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+border-top: 1px solid #e5e7eb;
+z-index: 50;
+}
+.mobile-menu-open a {
+padding: 1rem 1.5rem;
+border-bottom: 1px solid #f3f4f6;
+font-weight: 500;
+}
+.mobile-menu-open a:last-child {
+border-bottom: none;
+}
+/* Mobile Hero Improvements */
+.hero-text-mobile {
+font-size: 1.875rem;
+line-height: 2.25rem;
+}
+}
+@media (max-width: 640px) {
+.hero-text-mobile {
+font-size: 1.5rem;
+line-height: 2rem;
+}
+}
+/* Mobile Fleet Card Improvements */
+.fleet-card-mobile {
+width: 280px;
+min-width: 280px;
+}
+@media (max-width: 480px) {
+.fleet-card-mobile {
+width: 260px;
+min-width: 260px;
+}
+}
+/* Mobile Form Improvements */
+.mobile-form-grid {
+grid-template-columns: 1fr;
+}
+/* Mobile Footer Improvements */
+.mobile-footer-grid {
+grid-template-columns: 1fr;
+gap: 2rem;
+}
+@media (min-width: 640px) {
+.mobile-footer-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+@media (min-width: 768px) {
+.mobile-footer-grid {
+grid-template-columns: repeat(4, 1fr);
+}
+}
+/* Mobile Button Improvements */
+.mobile-btn {
+padding: 0.75rem 1rem;
+font-size: 0.875rem;
+}
+@media (min-width: 640px) {
+.mobile-btn {
+padding: 1rem 1.5rem;
+font-size: 1rem;
+}
+}
+/* Mobile Text Improvements */
+.mobile-text-sm {
+font-size: 0.875rem;
+}
+@media (min-width: 640px) {
+.mobile-text-sm {
+font-size: 1rem;
+}
+}
+/* Mobile Spacing Improvements */
+.mobile-section-padding {
+padding: 2rem 1rem;
+}
+@media (min-width: 640px) {
+.mobile-section-padding {
+padding: 3rem 1.5rem;
+}
+}
+@media (min-width: 768px) {
+.mobile-section-padding {
+padding: 5rem 2rem;
+}
+}
+/* Mobile Container Improvements */
+.mobile-container {
+padding-left: 1rem;
+padding-right: 1rem;
+}
+@media (min-width: 640px) {
+.mobile-container {
+padding-left: 1.5rem;
+padding-right: 1.5rem;
+}
+}
+@media (min-width: 768px) {
+.mobile-container {
+padding-left: 2rem;
+padding-right: 2rem;
+}
+}
+@media (min-width: 1024px) {
+.mobile-container {
+padding-left: 2rem;
+padding-right: 2rem;
+}
+}
+/* Mobile Grid Improvements */
+.mobile-grid-1 {
+grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+.mobile-grid-1 {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+@media (min-width: 768px) {
+.mobile-grid-1 {
+grid-template-columns: repeat(3, 1fr);
+}
+}
+.mobile-grid-2 {
+grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+.mobile-grid-2 {
+grid-template-columns: repeat(2, 1fr);
+}
+}
+/* Mobile Image Improvements */
+.mobile-image-height {
+height: 200px;
+}
+@media (min-width: 640px) {
+.mobile-image-height {
+height: 240px;
+}
+}
+@media (min-width: 768px) {
+.mobile-image-height {
+height: 280px;
+}
+}
+.vehicle-card-animate {
+  transition: transform 0.4s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.vehicle-card-animate:hover {
+  transform: scale(1.045) translateY(-6px);
+  box-shadow: 0 10px 32px 0 rgba(30,77,140,0.15), 0 2px 4px 0 rgba(0,0,0,0.04);
+  z-index: 2;
+}
+/* Vehicle image zoom-in effect on hover */
+.vehicle-img-animate {
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), filter 0.4s;
+  will-change: transform, filter;
+}
+.vehicle-card-animate:hover .vehicle-img-animate {
+  transform: scale(1.13) rotate(-2deg);
+  filter: brightness(1.12) saturate(1.15) drop-shadow(0 4px 16px rgba(0,0,0,0.12));
+  z-index: 2;
+}
+  </style>
+</head>
+<body class="bg-white">
+  <!-- Header -->
+  <header class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto mobile-container">
+      <div class="flex justify-between items-center h-20 sm:h-24">
+        <div class="flex items-center">
+          <img src="https://static.readdy.ai/image/f880db354e6c7367522030489e0c2c65/5261fba7e29fb5ad2df3d2e0a298bfcb.png" alt="TirupatiTaxiWala Logo" class="h-14 sm:h-16 md:h-20">
+        </div>
+  <nav class="hidden md:flex space-x-4 lg:space-x-8 absolute md:static top-20 sm:top-24 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-lg md:shadow-none p-4 md:p-0 z-50 transition-all duration-300 flex-col md:flex-row">
+          <a href="travels-in-tirupati.html" class="block py-2 md:inline text-gray-700 hover:text-primary transition-colors">Home</a>
+          <a href="Vehicles.html" class="block py-2 md:inline text-gray-700 hover:text-primary transition-colors font-bold">Vehicles</a>
+          <a href="packages.html" class="block py-2 md:inline text-gray-700 hover:text-primary transition-colors">Tour Packages</a>
+          <a href="blog.html" class="block py-2 md:inline text-gray-700 hover:text-primary transition-colors">Blog</a>
+          <a href="about.html" class="block py-2 md:inline text-gray-700 hover:text-primary transition-colors">About Us</a>
+          <a href="contact.html" class="block py-2 md:inline text-gray-700 hover:text-primary transition-colors">Contact</a>
+        </nav>
+        <div class="flex items-center space-x-2 sm:space-x-4">
+          <a href="contact.html">
+            <button class="bg-primary text-white px-3 sm:px-4 md:px-6 py-2 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap text-xs sm:text-sm md:text-base mobile-btn">
+              Book Now
+            </button>
+          </a>
+          <button class="md:hidden w-8 h-8 flex items-center justify-center" id="mobile-menu-btn">
+            <i class="ri-menu-line text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- Hero Section -->
+  <section class="relative min-h-[40vh] md:min-h-[60vh] overflow-hidden">
+    <div class="relative w-full min-h-[40vh] md:min-h-[60vh] flex items-center justify-center hero-bg" style="background-image: url('Hero sec.jpg'); background-size: cover; background-position: center;">
+      <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+      <div class="relative z-10 w-full h-full flex items-center">
+        <div class="max-w-7xl mx-auto mobile-container">
+          <div class="max-w-2xl">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight hero-text-mobile">
+              Our Vehicles
+            </h1>
+            <p class="text-base sm:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed mobile-text-sm">
+              Choose from our range of well-maintained AC vehicles for every group size and travel need in Tirupati.
+            </p>
+            <a href="contact.html">
+              <button class="bg-primary text-white px-6 py-3 !rounded-button text-lg font-semibold hover:bg-orange-600 transition-colors whitespace-nowrap mobile-btn">
+                Book Your Vehicle
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Why Choose Our Vehicles Section -->
+  <section class="py-12 sm:py-20 bg-gray-50 mobile-section-padding">
+    <div class="max-w-7xl mx-auto mobile-container">
+      <div class="text-center mb-10 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">Why Choose Our Vehicles?</h2>
+        <p class="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto mobile-text-sm">
+          Experience the best-in-class taxi service in Tirupati with our modern, safe, and comfortable fleet.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mb-6">
+            <i class="ri-shield-check-line text-3xl text-primary"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Safety First</h3>
+          <p class="text-gray-600">All vehicles are sanitized, regularly serviced, and driven by experienced professionals.</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mb-6">
+            <i class="ri-car-line text-3xl text-primary"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Modern Fleet</h3>
+          <p class="text-gray-600">Choose from a wide range of new, clean, and comfortable AC vehicles for every group size.</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mb-6">
+            <i class="ri-customer-service-2-line text-3xl text-primary"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">24/7 Support</h3>
+          <p class="text-gray-600">Our team is available round-the-clock for bookings, queries, and on-road assistance.</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-lg flex flex-col items-center text-center hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mb-6">
+            <i class="ri-money-rupee-circle-line text-3xl text-primary"></i>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Transparent Pricing</h3>
+          <p class="text-gray-600">No hidden charges. Enjoy affordable, upfront rates and flexible packages for all trips.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Vehicle Fleet Section -->
+  <section id="fleet" class="py-12 sm:py-20 mobile-section-padding">
+    <div class="max-w-7xl mx-auto mobile-container">
+      <div class="text-center mb-10 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">Our Vehicles</h2>
+        <p class="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto mobile-text-sm">
+          Explore our fleet and select the perfect ride for your journey.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6" id="fleet-cards">
+        <!-- Swift Dzire -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fleet-card-mobile vehicle-card-animate">
+          <div class="h-48 bg-cover bg-center vehicle-img-animate" style="background-image: url('SwiftDizer.avif')"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Swift Dzire</h3>
+            <div class="flex items-center gap-4 mb-4">
+              <span class="flex items-center text-gray-600 text-sm">
+                <i class="ri-user-line mr-1"></i> 4 Passengers
+              </span>
+              <span class="flex items-center text-green-600 text-sm">
+                <i class="ri-snowflake-line mr-1"></i> AC
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">Perfect for couples and small families visiting temples</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-primary">₹14/km</span>
+              <a href="contact.html">
+                <button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap text-sm">
+                  Select Vehicle
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Toyota Etios -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fleet-card-mobile vehicle-card-animate">
+          <div class="h-48 bg-cover bg-center vehicle-img-animate" style="background-image: url('etios.png')"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Toyota Etios</h3>
+            <div class="flex items-center gap-4 mb-4">
+              <span class="flex items-center text-gray-600 text-sm">
+                <i class="ri-user-line mr-1"></i> 4 Passengers
+              </span>
+              <span class="flex items-center text-green-600 text-sm">
+                <i class="ri-snowflake-line mr-1"></i> AC
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">Comfortable sedan perfect for temple visits</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-primary">₹14/km</span>
+              <a href="contact.html">
+                <button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap text-sm">
+                  Select Vehicle
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Ertiga -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fleet-card-mobile vehicle-card-animate">
+          <div class="h-48 bg-cover bg-center vehicle-img-animate" style="background-image: url('maruti-ertiga.png')"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Ertiga</h3>
+            <div class="flex items-center gap-4 mb-4">
+              <span class="flex items-center text-gray-600 text-sm">
+                <i class="ri-user-line mr-1"></i> 6 Passengers
+              </span>
+              <span class="flex items-center text-green-600 text-sm">
+                <i class="ri-snowflake-line mr-1"></i> AC
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">Spacious and comfortable for families and small groups</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-primary">₹18/km</span>
+              <a href="contact.html">
+                <button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap text-sm">
+                  Select Vehicle
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Kia Carens -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fleet-card-mobile vehicle-card-animate">
+          <div class="h-48 bg-cover bg-center vehicle-img-animate" style="background-image: url('kia-Carens.webp')"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Kia Carens</h3>
+            <div class="flex items-center gap-4 mb-4">
+              <span class="flex items-center text-gray-600 text-sm">
+                <i class="ri-user-line mr-1"></i> 6 Passengers
+              </span>
+              <span class="flex items-center text-green-600 text-sm">
+                <i class="ri-snowflake-line mr-1"></i> AC
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">Modern MPV for family and group travel</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-primary">₹20/km</span>
+              <a href="contact.html">
+                <button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap text-sm">
+                  Select Vehicle
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Innova -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fleet-card-mobile vehicle-card-animate">
+          <div class="h-48 bg-cover bg-center vehicle-img-animate" style="background-image: url('toyota-innova.avif')"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Innova</h3>
+            <div class="flex items-center gap-4 mb-4">
+              <span class="flex items-center text-gray-600 text-sm">
+                <i class="ri-user-line mr-1"></i> 7 Passengers
+              </span>
+              <span class="flex items-center text-green-600 text-sm">
+                <i class="ri-snowflake-line mr-1"></i> AC
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">Popular choice for family and group travel</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-primary">₹20/km</span>
+              <a href="contact.html">
+                <button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap text-sm">
+                  Select Vehicle
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Innova Crysta -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fleet-card-mobile vehicle-card-animate">
+          <div class="h-48 bg-cover bg-center vehicle-img-animate" style="background-image: url('crysta.webp')"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Innova Crysta</h3>
+            <div class="flex items-center gap-4 mb-4">
+              <span class="flex items-center text-gray-600 text-sm">
+                <i class="ri-user-line mr-1"></i> 7 Passengers
+              </span>
+              <span class="flex items-center text-green-600 text-sm">
+                <i class="ri-snowflake-line mr-1"></i> AC
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">Luxury and comfort for premium travel</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-primary">₹22/km</span>
+              <a href="contact.html">
+                <button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap text-sm">
+                  Select Vehicle
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Tempo Traveller 12 Seater -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fleet-card-mobile vehicle-card-animate">
+          <div class="h-48 bg-cover bg-center vehicle-img-animate" style="background-image: url('tempo-traveller-12seater.jpg')"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Tempo Traveller 12 Seater</h3>
+            <div class="flex items-center gap-4 mb-4">
+              <span class="flex items-center text-gray-600 text-sm">
+                <i class="ri-user-line mr-1"></i> 12 Passengers
+              </span>
+              <span class="flex items-center text-green-600 text-sm">
+                <i class="ri-snowflake-line mr-1"></i> AC
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">Perfect for large groups and pilgrimages</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-primary">₹25/km</span>
+              <a href="contact.html">
+                <button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap text-sm">
+                  Select Vehicle
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Tempo Traveller 17 Seater -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fleet-card-mobile vehicle-card-animate">
+          <div class="h-48 bg-cover bg-center vehicle-img-animate" style="background-image: url('Tempo-Traveller-17-Seater.png')"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Tempo Traveller 17 Seater</h3>
+            <div class="flex items-center gap-4 mb-4">
+              <span class="flex items-center text-gray-600 text-sm">
+                <i class="ri-user-line mr-1"></i> 17 Passengers
+              </span>
+              <span class="flex items-center text-green-600 text-sm">
+                <i class="ri-snowflake-line mr-1"></i> AC
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">Perfect for large groups and pilgrimages</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-primary">₹35/km</span>
+              <a href="contact.html">
+                <button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap text-sm">
+                  Select Vehicle
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Mini Bus 27 Seater -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow fleet-card-mobile vehicle-card-animate">
+          <div class="h-48 bg-cover bg-center vehicle-img-animate" style="background-image: url('Tempo-Traveller-24 seater.jpg')"></div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">Mini Bus 27 Seater</h3>
+            <div class="flex items-center gap-4 mb-4">
+              <span class="flex items-center text-gray-600 text-sm">
+                <i class="ri-user-line mr-1"></i> 27 Passengers
+              </span>
+              <span class="flex items-center text-green-600 text-sm">
+                <i class="ri-snowflake-line mr-1"></i> AC
+              </span>
+            </div>
+            <p class="text-gray-600 mb-4 text-sm leading-relaxed">Ideal for big groups, events, and tours</p>
+            <div class="flex justify-between items-center">
+              <span class="text-2xl font-bold text-primary">₹55/km</span>
+              <a href="contact.html">
+                <button class="bg-primary text-white px-4 py-2 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap text-sm">
+                  Select Vehicle
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-12">
+        <a href="contact.html" class="inline-flex items-center bg-primary text-white px-6 py-3 !rounded-button hover:bg-orange-600 transition-colors whitespace-nowrap">
+          Book Your Vehicle <i class="ri-arrow-right-line ml-2"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-10 sm:py-16">
+    <div class="max-w-7xl mx-auto mobile-container">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <img src="https://static.readdy.ai/image/f880db354e6c7367522030489e0c2c65/5261fba7e29fb5ad2df3d2e0a298bfcb.png" alt="TirupatiTaxiWala Logo" class="h-16 mb-4">
+          <p class="text-gray-400 mb-6">
+            Your trusted partner for comfortable and reliable taxi service in Tirupati and surrounding areas.
+          </p>
+          <div class="flex space-x-4">
+            <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-lg hover:bg-primary transition-colors cursor-pointer">
+              <i class="ri-facebook-fill"></i>
+            </div>
+            <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-lg hover:bg-primary transition-colors cursor-pointer">
+              <i class="ri-twitter-fill"></i>
+            </div>
+            <div class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-lg hover:bg-primary transition-colors cursor-pointer">
+              <i class="ri-instagram-fill"></i>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="travels-in-tirupati.html" class="hover:text-white transition-colors">Home</a></li>
+            <li><a href="Vehicles.html" class="hover:text-white transition-colors">Vehicles</a></li>
+            <li><a href="packages.html" class="hover:text-white transition-colors">Tour Packages</a></li>
+            <li><a href="VIP Darshan.html" class="hover:text-white transition-colors">VIP Darshan</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Services</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="VIP Darshan.html" class="hover:text-white transition-colors">NRI Priority Darshan</a></li>
+            <li><a href="VIP Darshan.html" class="hover:text-white transition-colors">VIP Srivani Packages</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Airport Transfers</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Temple Tours</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Local Transportation</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact Info</h3>
+          <ul class="space-y-2 text-gray-400">
+            <li class="flex items-center">
+              <i class="ri-phone-line mr-2"></i>
+              +91-96669 96767
+            </li>
+            <li class="flex items-center">
+              <i class="ri-mail-line mr-2"></i>
+              contact@tirupatitaxiwala.com
+            </li>
+            <li class="flex items-center">
+              <i class="ri-map-pin-line mr-2"></i>
+              Tirupati, Andhra Pradesh
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-8 sm:mt-12 pt-6 sm:pt-8 text-center text-gray-400">
+        <p>&copy; 2025 Tirupati Taxiwala. All rights reserved. | <a href="privacy-policy.html" class="underline hover:text-white">Privacy Policy</a> | <a href="terms-and-conditions.html" class="underline hover:text-white">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+  <!-- Floating WhatsApp Button -->
+  <div class="floating-whatsapp">
+  <a href="https://wa.me/919966676961?text=Welcome to Tirupati Taxiwala.%0AWhat services / packages your looking for?%0AWhat is your preferred vehicle?%0AWhat Date and time you are planning for the trip?" class="bg-green-500 text-white w-12 h-12 sm:w-16 sm:h-16 rounded-full shadow-lg hover:bg-green-600 transition-colors flex items-center justify-center">
+      <i class="ri-whatsapp-fill text-xl sm:text-2xl"></i>
+    </a>
+  </div>
+<!-- Floating Phone Button -->
+<div class="floating-phone">
+<a href="tel:+919966676961" class="bg-primary text-white w-12 h-12 sm:w-16 sm:h-16 rounded-full shadow-lg hover:bg-orange-600 transition-colors flex items-center justify-center">
+<i class="ri-phone-fill text-xl sm:text-2xl"></i>
+</a>
+</div>
+<script id="mobile-menu-toggle">
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuButton = document.getElementById('mobile-menu-btn');
+    const nav = document.querySelector('nav');
+    // Always hide nav on mobile by default
+    function setInitialNavState() {
+      if (window.innerWidth < 768) {
+        nav.classList.add('hidden');
+        nav.classList.remove('mobile-menu-open');
+      } else {
+        nav.classList.remove('hidden');
+        nav.classList.remove('mobile-menu-open');
+      }
+    }
+    setInitialNavState();
+    window.addEventListener('resize', setInitialNavState);
+    if (menuButton && nav) {
+      menuButton.addEventListener('click', function() {
+        nav.classList.toggle('hidden');
+        if (!nav.classList.contains('hidden')) {
+          nav.classList.add('mobile-menu-open');
+        } else {
+          nav.classList.remove('mobile-menu-open');
+        }
+      });
+      // Close menu when clicking on a link (on mobile)
+      const navLinks = nav.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          if (window.innerWidth < 768) {
+            nav.classList.add('hidden');
+            nav.classList.remove('mobile-menu-open');
+          }
+        });
+      });
+    }
+  });
+  </script>
+  <script id="smooth-scroll">
+  document.addEventListener('DOMContentLoaded', function() {
+  const links = document.querySelectorAll('a[href^="#"]');
+  links.forEach(link => {
+  link.addEventListener('click', function(e) {
+  e.preventDefault();
+  const targetId = this.getAttribute('href');
+  const targetElement = document.querySelector(targetId);
+  if (targetElement) {
+  targetElement.scrollIntoView({
+  behavior: 'smooth',
+  block: 'start'
+  });
+  }
+  });
+  });
+  });
+  </script>
+  <script id="newsletter-form">
+  document.addEventListener('DOMContentLoaded', function() {
+  const newsletterForm = document.querySelector('section.bg-primary form');
+  if (newsletterForm) {
+  newsletterForm.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const emailInput = this.querySelector('input[type="email"]');
+  if (!emailInput.value) {
+  emailInput.classList.add('shake');
+  setTimeout(() => emailInput.classList.remove('shake'), 500);
+  return;
+  }
+  emailInput.value = '';
+  const successMessage = document.createElement('div');
+  successMessage.className = 'text-white text-center mt-4';
+  successMessage.textContent = 'Thank you for subscribing!';
+  this.parentElement.appendChild(successMessage);
+  setTimeout(() => successMessage.remove(), 3000);
+  });
+  }
+  });
+  </script>
+  <script id="booking-form-interactions">
+  document.addEventListener('DOMContentLoaded', function() {
+  const vehicleSelectBtn = document.getElementById('vehicle-select-btn');
+  const vehicleOptions = document.getElementById('vehicle-options');
+  const bookingForms = document.querySelectorAll('form');
+  function closeVehicleDropdown(event) {
+  if (!document.getElementById('vehicle-dropdown-container').contains(event.target)) {
+  vehicleOptions.classList.add('hidden');
+  document.removeEventListener('click', closeVehicleDropdown);
+  }
+  }
+  if (vehicleSelectBtn && vehicleOptions) {
+  vehicleSelectBtn.addEventListener('click', function(e) {
+  e.stopPropagation();
+  const isHidden = vehicleOptions.classList.contains('hidden');
+  vehicleOptions.classList.toggle('hidden');
+  if (isHidden) {
+  document.addEventListener('click', closeVehicleDropdown);
+  } else {
+  document.removeEventListener('click', closeVehicleDropdown);
+  }
+  });
+  const optionButtons = vehicleOptions.querySelectorAll('button');
+  optionButtons.forEach(button => {
+  button.addEventListener('click', function() {
+  const selectedValue = this.dataset.value;
+  vehicleSelectBtn.querySelector('span').textContent = selectedValue;
+  vehicleOptions.classList.add('hidden');
+  document.removeEventListener('click', closeVehicleDropdown);
+  });
+  });
+  }
+  bookingForms.forEach(form => {
+  form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  const selectedVehicle = document.getElementById('vehicle-select-btn').querySelector('span').textContent;
+  if (selectedVehicle === 'Select Vehicle') {
+  const vehicleDropdown = document.getElementById('vehicle-dropdown-container');
+  vehicleDropdown.classList.add('shake');
+  setTimeout(() => vehicleDropdown.classList.remove('shake'), 500);
+  return;
+  }
+  const formData = new FormData(this);
+  formData.append('vehicle', selectedVehicle);
+  console.log('Form submitted with vehicle:', selectedVehicle);
+  });
+  });
+  });
+  </script>
+  
+  <script id="phone-button">
+  document.addEventListener('DOMContentLoaded', function() {
+  const phoneButton = document.querySelector('.floating-phone button');
+  phoneButton.addEventListener('click', function() {
+  window.open('tel:+919876543210', '_self');
+  });
+  });
+  </script>
+  <script id="hero-carousel">
+  document.addEventListener('DOMContentLoaded', function() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.carousel-dot');
+  let currentSlide = 0;
+  const slideInterval = 5000;
+  function showSlide(index) {
+  slides.forEach(slide => slide.style.opacity = '0');
+  dots.forEach(dot => dot.classList.remove('bg-white'));
+  dots.forEach(dot => dot.classList.add('bg-white/50'));
+  slides[index].style.opacity = '1';
+  dots[index].classList.remove('bg-white/50');
+  dots[index].classList.add('bg-white');
+  }
+  function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+  }
+  dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+  currentSlide = index;
+  showSlide(currentSlide);
+  });
+  });
+  showSlide(0);
+  setInterval(nextSlide, slideInterval);
+  });
+  </script>
+  <script id="fleet-carousel">
+  document.addEventListener('DOMContentLoaded', function() {
+  const fleetCarousel = document.getElementById('fleet-carousel');
+  const cardWidth = 320; // w-80 = 320px
+  const gap = 24; // gap-6 = 24px
+  const scrollAmount = cardWidth + gap;
+  
+  window.scrollFleet = function(direction) {
+  if (!fleetCarousel) return;
+    
+  const currentScroll = fleetCarousel.scrollLeft;
+  const maxScroll = fleetCarousel.scrollWidth - fleetCarousel.clientWidth;
+    
+  if (direction === 'left') {
+  const newScroll = Math.max(0, currentScroll - scrollAmount);
+  fleetCarousel.scrollTo({
+  left: newScroll,
+  behavior: 'smooth'
+  });
+  } else if (direction === 'right') {
+  const newScroll = Math.min(maxScroll, currentScroll + scrollAmount);
+  fleetCarousel.scrollTo({
+  left: newScroll,
+  behavior: 'smooth'
+  });
+  }
+  };
+  
+  // Add touch/swipe support for mobile
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+  
+  fleetCarousel.addEventListener('mousedown', (e) => {
+  isDown = true;
+  fleetCarousel.style.cursor = 'grabbing';
+  startX = e.pageX - fleetCarousel.offsetLeft;
+  scrollLeft = fleetCarousel.scrollLeft;
+  });
+  
+  fleetCarousel.addEventListener('mouseleave', () => {
+  isDown = false;
+  fleetCarousel.style.cursor = 'grab';
+  });
+  
+  fleetCarousel.addEventListener('mouseup', () => {
+  isDown = false;
+  fleetCarousel.style.cursor = 'grab';
+  });
+  
+  fleetCarousel.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - fleetCarousel.offsetLeft;
+  const walk = (x - startX) * 2;
+  fleetCarousel.scrollLeft = scrollLeft - walk;
+  });
+  });
+  </script>
+  </body>
+  <!-- Chatbot Elements Start -->
+  <div class="chat-label">💬 Let’s Chat</div>
+  <div class="chatbot-button" onclick="toggleChat()">💬</div>
+  <div class="chatbot-window" id="chatbot">
+    <div class="chatbot-header">Tirupati Taxi Wala Assistant</div>
+    <div class="chatbot-messages" id="chatbot-messages"></div>
+  </div>
+  <style>
+    .chat-label {position: fixed;bottom: 175px;left: 25px;background: linear-gradient(135deg, #001f3f, #004080);color: #fff;padding: 6px 14px;border-radius: 20px 20px 20px 0;font-size: 14px;font-weight: 500;box-shadow: 0 3px 8px rgba(0,0,0,0.2);animation: float 2s infinite ease-in-out;z-index: 9999;}@keyframes float {0% { transform: translateY(0); }50% { transform: translateY(-4px); }100% { transform: translateY(0); }}.chatbot-button {position: fixed;bottom: 100px;left: 20px;background: linear-gradient(135deg, #001f3f, #004080);color: #fff;border-radius: 50%;width: 60px;height: 60px;display: flex;align-items: center;justify-content: center;cursor: pointer;box-shadow: 0 4px 10px rgba(0,0,0,0.2);font-size: 28px;transition: transform 0.2s;z-index: 9999;}.chatbot-button:hover {transform: scale(1.1);}.chatbot-window {position: fixed;bottom: 170px;left: 20px;width: 350px;height: 500px;background: linear-gradient(135deg, #ffffff, #f8f9fb);border-radius: 15px;box-shadow: 0 6px 20px rgba(0,0,0,0.3);display: none;flex-direction: column;overflow: hidden;z-index: 9999;}.chatbot-header {background: linear-gradient(135deg, #001f3f, #004080);color: #fff;padding: 15px;font-weight: bold;text-align: center;}.chatbot-messages {flex: 1;padding: 15px;overflow-y: auto;font-size: 14px;}.message {margin-bottom: 12px;padding: 10px 14px;border-radius: 10px;max-width: 80%;line-height: 1.4;}.bot-message {background: #f1f1f1;align-self: flex-start;}.user-message {background: #004080;color: #fff;align-self: flex-end;}.options {display: flex;flex-wrap: wrap;gap: 8px;margin-top: 8px;}.option-button {background: linear-gradient(135deg, #ffcc00, #ffb700);border: none;padding: 8px 12px;border-radius: 20px;cursor: pointer;font-size: 13px;transition: background 0.3s;color: #000;font-weight: 500;}.option-button:hover {background: linear-gradient(135deg, #ffb700, #e6a500);}
+  </style>
+  <script>
+    const chatbot = document.getElementById('chatbot');
+    const messagesContainer = document.getElementById('chatbot-messages');
+    const chatLabel = document.querySelector('.chat-label');
+    function toggleChat() {
+      chatbot.style.display = chatbot.style.display === 'flex' ? 'none' : 'flex';
+      chatLabel.style.display = 'none';
+      if (chatbot.style.display === 'flex' && messagesContainer.innerHTML === '') {
+        showBotMessage("🙏 Hi, welcome to Tirupati Taxi Wala! May I know your requirement?");
+        showOptions(["🚕 Taxi for Local Temple Visits", "🛕 Tirumala & Tirupati Packages", "💰 Check Fare", "📋 View Details", "📞 Talk to Support"]);
+      }
+    }
+    function showBotMessage(message) {
+      const msg = document.createElement('div');
+      msg.className = 'message bot-message';
+      msg.innerText = message;
+      messagesContainer.appendChild(msg);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+    function showUserMessage(message) {
+      const msg = document.createElement('div');
+      msg.className = 'message user-message';
+      msg.innerText = message;
+      messagesContainer.appendChild(msg);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+    function showOptions(options) {
+      const optionsDiv = document.createElement('div');
+      optionsDiv.className = 'options';
+      options.forEach(option => {
+        const btn = document.createElement('button');
+        btn.className = 'option-button';
+        btn.innerText = option;
+        btn.onclick = () => handleOption(option);
+        optionsDiv.appendChild(btn);
+      });
+      messagesContainer.appendChild(optionsDiv);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+    function handleOption(option) {
+      showUserMessage(option);
+      if (option.includes("Check Fare")) {
+        showBotMessage("🚖 Fare Chart:\n- Airport Pickup (Chennai to Tirupati): ₹4,500\n- Airport Pickup (Bangalore to Tirupati): ₹5,500\n- Tirupati Local (8hrs/80km): ₹2,200\n- Outstation (per km): ₹12/km");
+      } 
+      else if (option.includes("View Details")) {
+        showBotMessage("📋 Package Details:\n1. Tirupati Darshan Package – Includes pickup, darshan tickets, and drop.\n2. Tirumala & Tirupati Temples – Local sightseeing with guide.\n3. Outstation Trips – Bangalore, Chennai, Kalahasti, etc.");
+      }
+      else if (option.includes("Taxi for Local Temple")) {
+        showBotMessage("🛕 Local Temple Visits:\n- Govindaraja Swamy Temple\n- Kapila Theertham\n- ISKCON Tirupati\n- Sri Padmavathi Ammavari Temple");
+      }
+      else if (option.includes("Tirumala & Tirupati Packages")) {
+        showBotMessage("✨ Popular Packages:\n- One Day Tirupati Darshan\n- Two Day Tirumala Temple Tour\n- Special VIP Darshan Package");
+      }
+      else if (option.includes("Talk to Support") || option.includes("Book Now")) {
+        window.open("https://wa.me/919000000000?text=Hello%20I%20want%20to%20book%20a%20taxi", "_blank");
+      }
+      showOptions(["📋 View Details", "💰 Check Fare", "🚖 Book Now", "🔙 Back to Main Menu"]);
+    }
+  </script>
+  </html>
